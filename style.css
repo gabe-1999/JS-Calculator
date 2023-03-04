@@ -33,6 +33,7 @@ body {
     background-color: white;
     transform: translate(-50%);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    
 }
 
 .keyboard {
@@ -62,6 +63,7 @@ body {
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 p {
@@ -69,4 +71,13 @@ p {
     font-size: 25px;
     color: white;
     font-weight: bold;
+}
+
+#scr-text {
+    position: absolute;
+    color: black;
+    font-size: 35px;
+    top: 50%;
+    right: 2%;
+    transform: translate(0, -50%);
 }
