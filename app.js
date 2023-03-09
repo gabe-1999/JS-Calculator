@@ -1,6 +1,6 @@
 const keys = document.querySelectorAll(".key");
-const screen  = document.getElementById("screen");
-const scrText = document.getElementById("scr-text");
+const screen  = document.querySelector(".screen");
+const text = screen.querySelector('.scr-text');
 const values = {}
 let isLocked = false;
 let operation = "";
@@ -30,9 +30,9 @@ function handleClick() {
     }else if(this.id == "key-13") {
         clear();
     } else {
-        scrText.innerHTML += values[this.id];
+        text.innerHTML += values[this.id];
         operation += values[this.id];
-        console.log(scrText.offsetWidth, screen.offsetWidth);
+        console.log(screen.offsetWidth, screen.offsetWidth);
     }
     
 }
@@ -47,15 +47,15 @@ function calculate(op) {
 
 function showDisplay(value, isError = false) {
     if (isError) {
-        scrText.classList.add("error");
-        scrText.innerHTML = value;
+        text.innerHTML = value;
+        text.style.color = "crimson";
     } else {
-        scrText.innerHTML = value;
+        text.innerHTML = value;
     }
 }
 
 function clear() {
-    scrText.innerHTML = "";
-    scrText.classList.remove("error");
+    text.innerHTML = "";
+    text.style.color = "black"
     operation = "";
 }
